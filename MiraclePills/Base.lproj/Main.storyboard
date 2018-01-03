@@ -87,12 +87,37 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="STATE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bja-hz-POB">
+                                <rect key="frame" x="40" y="428.66666666666669" width="334" height="15.666666666666686"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your city..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Zqd-pj-DQs">
                                 <rect key="frame" x="40" y="388.66666666666669" width="334" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6D6-QO-HIU">
+                                <rect key="frame" x="40" y="445.33333333333331" width="334" height="33"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal" title="Select your State"/>
+                                <connections>
+                                    <action selector="StateButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wgO-3V-59r"/>
+                                </connections>
+                            </button>
+                            <pickerView hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="He3-eQ-mVg">
+                                <rect key="frame" x="65" y="448.33333333333326" width="284" height="216"/>
+                            </pickerView>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ync-3g-3We" userLabel="Accept Button">
+                                <rect key="frame" x="176.66666666666666" y="634.33333333333337" width="62" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Accept"/>
+                                <connections>
+                                    <action selector="AcceptButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Qpn-q8-tRW"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -100,36 +125,52 @@
                             <constraint firstItem="qzz-Rb-J6I" firstAttribute="top" secondItem="gPS-QN-t91" secondAttribute="bottom" constant="10" id="47w-d5-dBL"/>
                             <constraint firstItem="EYF-Lj-NUH" firstAttribute="leading" secondItem="QTL-EF-HL5" secondAttribute="leading" id="4gd-tE-WN0"/>
                             <constraint firstItem="EYF-Lj-NUH" firstAttribute="trailing" secondItem="QTL-EF-HL5" secondAttribute="trailing" id="7To-JV-1ez"/>
+                            <constraint firstItem="Bja-hz-POB" firstAttribute="trailing" secondItem="Zqd-pj-DQs" secondAttribute="trailing" id="7l9-du-z3m"/>
                             <constraint firstItem="QTL-EF-HL5" firstAttribute="top" secondItem="MDG-Bq-wzN" secondAttribute="bottom" constant="10" id="9Sq-wJ-Om6"/>
                             <constraint firstItem="gPS-QN-t91" firstAttribute="top" secondItem="0m2-AU-xj3" secondAttribute="bottom" constant="5" id="AIV-9v-ayJ"/>
                             <constraint firstItem="JYy-eY-3eB" firstAttribute="trailing" secondItem="qzz-Rb-J6I" secondAttribute="trailing" id="BgL-nA-2Yt"/>
+                            <constraint firstItem="Ync-3g-3We" firstAttribute="top" secondItem="He3-eQ-mVg" secondAttribute="bottom" constant="-30" id="CUj-U1-yDE"/>
+                            <constraint firstItem="Bja-hz-POB" firstAttribute="leading" secondItem="Zqd-pj-DQs" secondAttribute="leading" id="Cva-nZ-YSg"/>
                             <constraint firstItem="Zqd-pj-DQs" firstAttribute="top" secondItem="dhz-s9-HHZ" secondAttribute="bottom" constant="5" id="Fs1-lw-0mG"/>
                             <constraint firstItem="qzz-Rb-J6I" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="20" id="GQx-f9-YuA"/>
+                            <constraint firstItem="He3-eQ-mVg" firstAttribute="top" secondItem="6D6-QO-HIU" secondAttribute="bottom" constant="-30" id="Gg4-pR-Li7"/>
                             <constraint firstItem="Zqd-pj-DQs" firstAttribute="leading" secondItem="dhz-s9-HHZ" secondAttribute="leading" id="JX5-ah-R6D"/>
                             <constraint firstItem="gPS-QN-t91" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="KO9-am-KWM"/>
                             <constraint firstItem="dhz-s9-HHZ" firstAttribute="leading" secondItem="EYF-Lj-NUH" secondAttribute="leading" id="Shi-hY-wvT"/>
                             <constraint firstItem="QTL-EF-HL5" firstAttribute="trailing" secondItem="MDG-Bq-wzN" secondAttribute="trailing" id="Thp-Sb-rvE"/>
+                            <constraint firstItem="Bja-hz-POB" firstAttribute="top" secondItem="Zqd-pj-DQs" secondAttribute="bottom" constant="10" id="UgL-uK-gvv"/>
+                            <constraint firstItem="6D6-QO-HIU" firstAttribute="top" secondItem="Bja-hz-POB" secondAttribute="bottom" constant="1" id="VYH-ea-ZxL"/>
+                            <constraint firstItem="He3-eQ-mVg" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="65" id="YKE-jf-ybv"/>
                             <constraint firstItem="Zqd-pj-DQs" firstAttribute="trailing" secondItem="dhz-s9-HHZ" secondAttribute="trailing" id="bTv-2l-CAA"/>
+                            <constraint firstItem="Ync-3g-3We" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="cle-AU-ema"/>
                             <constraint firstItem="39e-8L-c7m" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="d2x-HS-qbo"/>
+                            <constraint firstItem="6D6-QO-HIU" firstAttribute="leading" secondItem="Bja-hz-POB" secondAttribute="leading" id="e3e-If-X8F"/>
                             <constraint firstItem="dhz-s9-HHZ" firstAttribute="top" secondItem="EYF-Lj-NUH" secondAttribute="bottom" constant="10" id="ez1-hR-632"/>
                             <constraint firstItem="QTL-EF-HL5" firstAttribute="leading" secondItem="MDG-Bq-wzN" secondAttribute="leading" id="f6m-xy-LqE"/>
                             <constraint firstAttribute="trailingMargin" secondItem="qzz-Rb-J6I" secondAttribute="trailing" constant="20" id="giZ-dq-eyR"/>
                             <constraint firstItem="JYy-eY-3eB" firstAttribute="top" secondItem="qzz-Rb-J6I" secondAttribute="bottom" constant="10" id="jA8-ji-aqD"/>
                             <constraint firstItem="dhz-s9-HHZ" firstAttribute="trailing" secondItem="EYF-Lj-NUH" secondAttribute="trailing" id="jJh-ZE-Zmf"/>
+                            <constraint firstItem="6D6-QO-HIU" firstAttribute="trailing" secondItem="Bja-hz-POB" secondAttribute="trailing" id="kg0-Wf-7dW"/>
                             <constraint firstItem="EYF-Lj-NUH" firstAttribute="top" secondItem="QTL-EF-HL5" secondAttribute="bottom" constant="5" id="lst-FC-Z8h"/>
                             <constraint firstItem="0m2-AU-xj3" firstAttribute="top" secondItem="39e-8L-c7m" secondAttribute="bottom" constant="20" id="pFB-3m-VnC"/>
                             <constraint firstItem="JYy-eY-3eB" firstAttribute="leading" secondItem="qzz-Rb-J6I" secondAttribute="leading" id="qGq-Cj-3UL"/>
                             <constraint firstItem="0m2-AU-xj3" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="rmq-ON-LSP"/>
                             <constraint firstItem="39e-8L-c7m" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="uoO-0h-UW3"/>
                             <constraint firstItem="MDG-Bq-wzN" firstAttribute="trailing" secondItem="JYy-eY-3eB" secondAttribute="trailing" id="vXT-bW-beZ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="He3-eQ-mVg" secondAttribute="trailing" constant="65" id="xGo-w5-jGj"/>
                             <constraint firstItem="MDG-Bq-wzN" firstAttribute="leading" secondItem="JYy-eY-3eB" secondAttribute="leading" id="xmF-1c-Y3A"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="AcceptButton" destination="Ync-3g-3We" id="RM8-6L-nZE"/>
+                        <outlet property="stateButton" destination="6D6-QO-HIU" id="JFD-y1-1kh"/>
+                        <outlet property="statePicker" destination="He3-eQ-mVg" id="Fea-2C-PcN"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="24.800000000000001" y="31.934032983508249"/>
+            <point key="canvasLocation" x="24.637681159420293" y="31.793478260869566"/>
         </scene>
     </scenes>
     <resources>
