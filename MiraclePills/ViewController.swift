@@ -17,7 +17,20 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     
     @IBOutlet weak var AcceptButton: UIButton!
     
+    @IBOutlet weak var countryLabel: UILabel!
     
+    @IBOutlet weak var countryTextField: UITextField!
+    
+    @IBOutlet weak var postCodeLabel: UILabel!
+    
+    @IBOutlet weak var postCodeTextField: UITextField!
+    
+    @IBOutlet weak var buyNowButton: UIButton!
+    
+    @IBOutlet weak var successImage: UIImageView!
+    @IBOutlet weak var nameText: UITextField!
+    @IBOutlet weak var streetText: UITextField!
+    @IBOutlet weak var cityText: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
         statePicker.dataSource = self
@@ -49,10 +62,42 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     @IBAction func StateButtonPressed(_ sender: Any) {
         statePicker.isHidden = false
         AcceptButton.isHidden = false
+        
+        countryLabel.isHidden = true
+        countryTextField.isHidden = true
+        postCodeLabel.isHidden = true
+        postCodeTextField.isHidden = true
+        
+        buyNowButton.isHidden = true
     }
     @IBAction func AcceptButtonPressed(_ sender: Any) {
         statePicker.isHidden = true
         AcceptButton.isHidden = true
+        
+        countryLabel.isHidden = false
+        countryTextField.isHidden = false
+        postCodeLabel.isHidden = false
+        postCodeTextField.isHidden = false
+        
+        buyNowButton.isHidden = false
+    }
+    
+    @IBAction func BuyNowPressed(_ sender: Any) {
+        if CheckFieldsFilled()
+        {
+            //make success image appear
+            successImage.isHidden = false
+        }
+    }
+    
+    func CheckFieldsFilled()->Bool
+    {
+        if countryTextField.text != "" && nameText.text != "" && cityText.text != "" && streetText.text != "" && postCodeTextField.text != "" && stateButton.currentTitle != "Select your State" {
+            return true
+        }
+        else {
+            return false
+        }
     }
 }
 
