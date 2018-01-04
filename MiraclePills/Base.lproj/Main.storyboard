@@ -156,6 +156,28 @@
                                     <constraint firstAttribute="height" constant="240" id="Zxz-pp-y2w"/>
                                 </constraints>
                             </imageView>
+                            <visualEffectView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="A5r-Ds-upL">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" insetsLayoutMarginsFromSafeArea="NO" id="eTT-sh-8fY">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <visualEffectView hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Xmv-p9-bmK">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" insetsLayoutMarginsFromSafeArea="NO" id="HB9-kn-fK3">
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                            </view>
+                                            <vibrancyEffect>
+                                                <blurEffect style="light"/>
+                                            </vibrancyEffect>
+                                        </visualEffectView>
+                                    </subviews>
+                                </view>
+                                <blurEffect style="light"/>
+                            </visualEffectView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -219,6 +241,7 @@
                     </view>
                     <connections>
                         <outlet property="AcceptButton" destination="Ync-3g-3We" id="RM8-6L-nZE"/>
+                        <outlet property="SuccessView" destination="WKi-5l-d6I" id="iGg-tG-OZd"/>
                         <outlet property="buyNowButton" destination="TeL-oh-atC" id="ux6-gT-4ad"/>
                         <outlet property="cityText" destination="Zqd-pj-DQs" id="8Yk-ff-1eR"/>
                         <outlet property="countryLabel" destination="BSu-Gf-EMz" id="u6W-6d-eMJ"/>
@@ -230,9 +253,23 @@
                         <outlet property="statePicker" destination="He3-eQ-mVg" id="Fea-2C-PcN"/>
                         <outlet property="streetText" destination="EYF-Lj-NUH" id="aF1-Ga-BKy"/>
                         <outlet property="successImage" destination="VPU-MM-dGp" id="SKl-qc-Gx4"/>
+                        <outlet property="successViewButton" destination="Lqx-zP-ceT" id="Y85-CK-ibi"/>
+                        <outlet property="visualEffect" destination="A5r-Ds-upL" id="oqc-f7-UBv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="successIndicator" id="WKi-5l-d6I">
+                    <rect key="frame" x="0.0" y="0.0" width="254" height="191"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                </imageView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Lqx-zP-ceT" userLabel="SuccessViewButton">
+                    <rect key="frame" x="0.0" y="0.0" width="224" height="211"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <state key="normal" backgroundImage="successIndicator"/>
+                    <connections>
+                        <action selector="SuccessButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="b9Y-cL-q3c"/>
+                    </connections>
+                </button>
             </objects>
             <point key="canvasLocation" x="24.637681159420293" y="31.793478260869566"/>
         </scene>

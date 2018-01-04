@@ -31,11 +31,48 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     @IBOutlet weak var nameText: UITextField!
     @IBOutlet weak var streetText: UITextField!
     @IBOutlet weak var cityText: UITextField!
+    
+    @IBOutlet var SuccessView: UIImageView!
+    @IBOutlet var successViewButton: UIButton!
+    
+    @IBOutlet weak var visualEffect: UIVisualEffectView!
+    var effect:UIVisualEffect!
     override func viewDidLoad() {
         super.viewDidLoad()
         statePicker.dataSource = self
         statePicker.delegate = self
+        
+        effect = visualEffect.effect
+        visualEffect.effect = nil
+        visualEffect.isUserInteractionEnabled = false
+        
         // Do any additional setup after loading the view, typically from a nib.
+    }
+    
+    func animateIn(){
+        self.view.addSubview(successViewButton)
+        successViewButton.center = self.view.center
+        
+        successViewButton.transform = CGAffineTransform.init(scaleX: 1.3, y: 1.3)
+        successViewButton.alpha = 0
+        visualEffect.isUserInteractionEnabled = true
+        UIView.animate(withDuration: 0.4){
+            self.visualEffect.effect = self.effect
+            self.successViewButton.alpha = 1
+            self.successViewButton.transform = CGAffineTransform.identity;
+        }
+    }
+    
+    func animateOut(){
+        visualEffect.isUserInteractionEnabled = false
+        UIView.animate(withDuration: 0.4, animations: {
+            self.successViewButton.transform = CGAffineTransform.init(scaleX: 1.3, y: 1.3)
+            self.successViewButton.alpha = 0
+            
+            self.visualEffect.effect = nil
+        }){ (success:Bool) in
+            self.successViewButton.removeFromSuperview()
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -86,10 +123,14 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         if CheckFieldsFilled()
         {
             //make success image appear
-            successImage.isHidden = false
+            //successImage.isHidden = false
+            animateIn()
         }
     }
     
+    @IBAction func SuccessButtonPressed(_ sender: Any) {
+        animateOut()
+    }
     func CheckFieldsFilled()->Bool
     {
         if countryTextField.text != "" && nameText.text != "" && cityText.text != "" && streetText.text != "" && postCodeTextField.text != "" && stateButton.currentTitle != "Select your State" {
